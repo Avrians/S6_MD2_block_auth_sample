@@ -6,11 +6,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<LoginEvent>((event, emit) async {
       emit(AuthLoading());
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 5));
       emit(AuthSuccess(name: 'Avriansyah'));
     });
 
-
+    on<LogoutEvent>((event, emit) async {
+      emit(AuthLoading());
+      await Future.delayed(Duration(seconds: 5));
+      emit(AuthInitial());
+    });
 
   };
 }
