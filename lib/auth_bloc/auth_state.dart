@@ -1,16 +1,18 @@
-abstract class AuthEvent{}
+abstract class AuthState{}
 
-class AuthInitial extends AuthEvent {}
+class AuthInitial extends AuthState {}
 
-class AuthLoading extends AuthEvent {}
+class AuthLoading extends AuthState {}
 
-class AuthSuccess extends AuthEvent {
+class AuthSuccess extends AuthState {
   final String name;
 
-  AuthSuccess({required this.name});
+  AuthSuccess({
+    required this.name
+    });
 }
 
-class AuthError extends AuthEvent {
+class AuthError extends AuthState {
   final String message;
 
   AuthError({required this.message});

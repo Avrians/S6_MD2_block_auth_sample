@@ -15,6 +15,5 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await Future.delayed(Duration(seconds: 5));
       emit(AuthInitial());
     });
-
-  };
+  }
 }
